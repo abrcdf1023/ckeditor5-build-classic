@@ -7,7 +7,6 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -27,13 +26,21 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
-	UploadAdapter,
+	SimpleUploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
@@ -52,26 +59,50 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	Highlight,
+	TextTransformation,
+	Alignment,
+	TodoList,
+	Font,
+	Indent,
+	RemoveFormat
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'undo',
+			'redo',
+			'|',
 			'heading',
 			'|',
+			'blockQuote',
+			'fontFamily',
+			'fontSize',
 			'bold',
 			'italic',
+			'fontColor',
+			'highlight',
+			'removeFormat',
+			'|',
 			'link',
+			'imageUpload',
+			'mediaEmbed',
+			'|',
+			'alignment:left',
+			'alignment:center',
+			'alignment:right',
+			'alignment:justify',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'imageUpload',
-			'blockQuote',
+			'todoList',
+			'outdent',
+			'indent',
+			'|',
 			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo'
 		]
 	},
 	image: {
@@ -90,5 +121,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'zh'
 };
