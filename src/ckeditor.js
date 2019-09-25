@@ -31,6 +31,9 @@ import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleu
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -60,18 +63,29 @@ ClassicEditor.builtinPlugins = [
 	Highlight,
 	TextTransformation,
 	Alignment,
-	TodoList
+	TodoList,
+	Font,
+	Indent,
+	RemoveFormat
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'undo',
+			'redo',
+			'|',
 			'heading',
 			'|',
+			'blockQuote',
+			'fontFamily',
+			'fontSize',
 			'bold',
 			'italic',
+			'fontColor',
 			'highlight',
+			'removeFormat',
 			'|',
 			'link',
 			'imageUpload',
@@ -85,10 +99,10 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'numberedList',
 			'todoList',
+			'outdent',
+			'indent',
 			'|',
 			'insertTable',
-			'|',
-			'blockQuote',
 		]
 	},
 	image: {
