@@ -19,6 +19,7 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -32,8 +33,11 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Font from '@ckeditor/ckeditor5-font/src/font';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+
+import Drawio from '@e-group/ckeditor-drawio/src/drawio';
+import DrawioToobar from '@e-group/ckeditor-drawio/src/drawiotoolbar';
+import DrawioEdit from '@e-group/ckeditor-drawio/src/drawioedit';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -53,6 +57,7 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	Indent,
 	Link,
 	List,
 	MediaEmbed,
@@ -66,7 +71,10 @@ ClassicEditor.builtinPlugins = [
 	TodoList,
 	Font,
 	Indent,
-	RemoveFormat
+	RemoveFormat,
+	Drawio,
+	DrawioToobar,
+	DrawioEdit
 ];
 
 // Editor configuration.
@@ -102,7 +110,7 @@ ClassicEditor.defaultConfig = {
 			'outdent',
 			'indent',
 			'|',
-			'insertTable',
+			'insertTable'
 		]
 	},
 	image: {
@@ -119,6 +127,9 @@ ClassicEditor.defaultConfig = {
 			'tableRow',
 			'mergeTableCells'
 		]
+	},
+	drawio: {
+		toolbar: [ 'drawioEdit' ]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'zh'
