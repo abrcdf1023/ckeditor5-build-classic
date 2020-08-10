@@ -557,10 +557,10 @@
     "@ckeditor/ckeditor5-utils" "^21.0.0"
     lodash-es "^4.17.15"
 
-"@e-group/ckeditor-drawio@^18.1.1":
-  version "18.1.1"
-  resolved "https://registry.yarnpkg.com/@e-group/ckeditor-drawio/-/ckeditor-drawio-18.1.1.tgz#76af9c78eb526b1c607936ed9d2ba46deff4dfcd"
-  integrity sha512-LA6VAdZbw86U2lDgg4b0Dl/urlHsIQ26whbPiRGMrlN64FlP9FLTLS6rQGxgdQbwGoVChYPJq1wxASnI/pye0w==
+"@e-group/ckeditor-drawio@^18.1.2":
+  version "18.1.2"
+  resolved "https://registry.yarnpkg.com/@e-group/ckeditor-drawio/-/ckeditor-drawio-18.1.2.tgz#366c03f1a6d521da391d63ab38f9e86d9ed5ff15"
+  integrity sha512-2oPlXyHitwRUQpZtIVqJxTUX6c+UuKv9fqsvm1IM/RJFs+2zNDh0HRychprrWSLyjTijt5kSDmMjTJ0lwj1Nww==
   dependencies:
     "@ckeditor/ckeditor5-clipboard" "^21.0.0"
     "@ckeditor/ckeditor5-core" "^21.0.0"
